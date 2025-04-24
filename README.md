@@ -1,7 +1,7 @@
-Medical Concept Annotator
+#Medical Concept Annotator
 Unsupervised medical concept identification and normalization tool combining semantic embeddings (SapBERT) with syntactic matching.
 
-Features
+#Features
 Multi-strategy matching: Combines semantic similarity (SapBERT embeddings) and syntactic similarity (fuzzy matching)
 
 Comprehensive processing: Handles n-grams (1-5 words) with stopword filtering optimized for medical text
@@ -10,7 +10,7 @@ Position-aware: Tracks concept positions in original text
 
 Semantic filtering: Focuses on clinically relevant concept types (disorders, procedures, etc.)
 
-Installation
+#Installation
 bash
 pip install -r requirements.txt  # See requirements section below
 Usage
@@ -29,11 +29,12 @@ results = annotator.normalize(
 )
 
 # Output contains:
-# - Normalized concepts with SNOMED IDs
-# - Similarity scores
-# - Text positions
-# - Semantic types
-Data Requirements
+ - Normalized concepts with SNOMED IDs
+ - Similarity scores
+ - Text positions
+ - Semantic types
+   
+#Data Requirements
 Place these files in your data directory:
 
 MCN_data_new.csv - Concept terminology
@@ -42,7 +43,7 @@ train_new.csv - Additional training concepts
 
 FAISS_IP_new_traindata.idx - Pre-built FAISS index
 
-Dependencies
+#Dependencies
 Python 3.7+
 PyTorch
 Transformers
@@ -52,7 +53,7 @@ NLTK
 FuzzyWuzzy
 Levenshtein
 
-Methods
+#Methods
 Text Processing:
 Medical-aware stopword removal
 N-gram generation (1-5 words)
@@ -65,7 +66,7 @@ Post-processing:
 Overlap resolution (keeps longest match)
 Semantic type filtering
 
-Limitations
+#Limitations
 Requires pre-built concept indexes
 Best performance on clinical text
 
